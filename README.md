@@ -18,13 +18,48 @@ The pretreatment program of Diabetic Retinopathy Detection, the first prize in a
 
 > https://www.kaggle.com/ratthachat/aptos-eye-preprocessing-in-diabetic-retinopathy#2.-Try-Ben-Graham's-preprocessing-method.
 ### Additional Training Datasets
-2015 kaggle Diabetic Retinopathy (resized)
+- 2015 kaggle Diabetic Retinopathy (resized)
 > https://www.kaggle.com/tanlikesmath/diabetic-retinopathy-resized
 
-Pseudo Labeling
+- Pseudo Labeling
 
 Pseudo labeling is the process of adding confident predicted test data to your training data. Pseudo labeling is a 5 step process. (1) Build a model using training data. (2) Predict labels for an unseen test dataset. (3) Add confident predicted test observations to our training data (4) Build a new model using combined data. And (5) use your new model to predict the test data and submit to Kaggle. Here is a pictorial explanation using sythetic 2D data.
 > https://www.kaggle.com/cdeotte/pseudo-labeling-qda-0-969
 ### Model Ensemble
+## Training
+### 1st-level models (run on local)
+- Models: SE-ResNeXt50\_32x4d, SE-ResNeXt101\_32x4d, SENet154
+- Loss: MSE
+- Optimizer: SGD (momentum=0.9)
+- LR scheduler: CosineAnnealingLR (lr=1e-3 -> 1e-5)
+- 30 epochs
+- Dataset: 2019 train dataset (5-folds cv) + 2015 dataset (like https://www.kaggle.com/c/aptos2019-blindness-detection/discussion/97860#581042)
+
+### 2nd-level models (run on [kernel](https://www.kaggle.com/uiiurz1/aptos-2019-14th-place-solution))
+- Models: SE-ResNeXt50\_32x4d, SE-ResNeXt101\_32x4d (1st-level models' weights)
+- Loss: MSE
+- Optimizer: RAdam
+- LR scheduler: CosineAnnealingLR (lr=1e-3 -> 1e-5)
+- 10 epochs
+- Dataset: 2019 train dataset (5-folds cv) + 2019 test dataset (**public + private**,  divided into 5 and used different data each fold. )
+- Pseudo labels: weighted average of 1st-level models
+
+### Ensemble
+Finally, averaged 2nd-level models' predictions.
+
+- PublicLB: 0.826
+- PrivateLB: 0.930
+
+## Train 1st-level models
+To train 1st-level models, run:
+
+```
+python train.py --arch se_resnext50_32x4d
+python train.py --arch se_resnext101_32x4d --batch_size 24
+python train.py --arch senet154 --batch_size 16
+```
+
+## Train 2nd-level models and ensemble
+https://www.kaggle.com/uiiurz1/aptos-2019-14th-place-solution
 
 
