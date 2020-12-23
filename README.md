@@ -54,7 +54,7 @@ python train.py --arch senet154 --batch_size 16
 ### Ensemble
 Finally, averaged 2nd-level models' predictions.
 
-- PublicLB: 0.824
+- PublicLB: 0.826
 - PrivateLB: 0.930
 
 
