@@ -40,7 +40,7 @@ python train.py --arch senet154 --batch_size 16
 - Optimizer: SGD (momentum=0.9)
 - LR scheduler: CosineAnnealingLR (lr=1e-3 -> 1e-5)
 - 30 epochs
-- Dataset: 2019 train dataset (5-folds cv) + 2015 dataset (like https://www.kaggle.com/c/aptos2019-blindness-detection/discussion/97860#581042)
+- Dataset: 2019 train dataset (5-folds cv) + 2015 dataset (https://www.kaggle.com/tanlikesmath/diabetic-retinopathy-resized)
 
 ### 2nd-level models (run on [kernel](https://www.kaggle.com/stormdiv/nctu-cs-t0828-final-aptos-2019-0856152?scriptVersionId=49287316))
 - Models: SE-ResNeXt50\_32x4d, SE-ResNeXt101\_32x4d (1st-level models' weights)
