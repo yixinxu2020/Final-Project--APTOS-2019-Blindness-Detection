@@ -28,6 +28,13 @@ Pseudo labeling is the process of adding confident predicted test data to your t
 ### Model Ensemble
 ## Training
 ### 1st-level models (run on local)
+To train 1st-level models, run:
+
+```
+python train.py --arch se_resnext50_32x4d
+python train.py --arch se_resnext101_32x4d --batch_size 24
+python train.py --arch senet154 --batch_size 16
+```
 - Models: SE-ResNeXt50\_32x4d, SE-ResNeXt101\_32x4d, SENet154
 - Loss: MSE
 - Optimizer: SGD (momentum=0.9)
@@ -50,16 +57,5 @@ Finally, averaged 2nd-level models' predictions.
 - PublicLB: 0.826
 - PrivateLB: 0.930
 
-## Train 1st-level models
-To train 1st-level models, run:
-
-```
-python train.py --arch se_resnext50_32x4d
-python train.py --arch se_resnext101_32x4d --batch_size 24
-python train.py --arch senet154 --batch_size 16
-```
-
-## Train 2nd-level models and ensemble
-https://www.kaggle.com/uiiurz1/aptos-2019-14th-place-solution
 
 
