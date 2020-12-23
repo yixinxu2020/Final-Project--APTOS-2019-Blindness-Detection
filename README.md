@@ -56,6 +56,10 @@ Finally, averaged 2nd-level models' predictions.
 
 - PublicLB: 0.826
 - PrivateLB: 0.930
-
+## Reference 
+Unsupervised Clustering Using Pseudo-semisupervised Learning
+> https://openreview.net/pdf?id=rJlnxkSYPS
+Pseudo-Label : The Simple and Efficient Semi-Supervised Learning Method for Deep Neural Networks
+> https://www.researchgate.net/publication/280581078_Pseudo-Label_The_Simple_and_Efficient_Semi-Supervised_Learning_Method_for_Deep_Neural_Networks
 
 
