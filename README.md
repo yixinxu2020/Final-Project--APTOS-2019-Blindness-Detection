@@ -58,6 +58,9 @@ Finally, averaged 2nd-level models' predictions.
 - PublicLB: 0.826
 - PrivateLB: 0.930
 ## Reference 
+**11th place solution for APTOS 2019 Blindness Detection on Kaggle**
+> https://github.com/4uiiurz1/kaggle-aptos2019-blindness-detection
+
 **Unsupervised Clustering Using Pseudo-semisupervised Learning**
 > https://openreview.net/pdf?id=rJlnxkSYPS
 
