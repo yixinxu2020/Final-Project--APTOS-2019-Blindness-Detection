@@ -13,10 +13,12 @@ name | student id
 蘇信恩 |  0616215
 ## Proposed Approach
 ### Data Proprecess
-> Ben Graham's preprocessing method(scale radius)
+The pretreatment program of Diabetic Retinopathy Detection, the first prize in a similar competition in 2015, was Ben.In simple terms, it is to improve the inconsistent brightness of pictures, and make center crop and remove black edges on the pictures. The details can be referred to as follows:
+> Ben Graham's preprocessing method(scale radius) https://www.kaggle.com/ratthachat/aptos-eye-preprocessing-in-diabetic-retinopathy#2.-Try-Ben-Graham's-preprocessing-method.
 ### Additional Training Datasets
 > 2015 kaggle Diabetic Retinopathy (resized)
+
 > Pseudo Labeling
-#### Model Ensemble
+### Model Ensemble
 
 
