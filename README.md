@@ -27,7 +27,7 @@ Pseudo labeling is the process of adding confident predicted test data to your t
 > https://www.kaggle.com/cdeotte/pseudo-labeling-qda-0-969
 ### Model Ensemble
 ## Training
-The training process can be divided into two stages. In the first stage, use 2019 train dataset (5-folds cv) + 2015 dataset as training datasets, devide the datasets into 5 folder to train 5 basic on the local, and get the 1st-level model. Then use the 1st-level model with Pseudo Labeling to label the test dataset as addtional training datasets, and run the 2en-level model on the kernel. Fanally ensamble the models get the final result.
+The training process can be divided into two stages. In the first stage, use 2019 train dataset (5-folds cv) + 2015 dataset as training datasets, devide the datasets into 5 folder to train basic model on the local, and get the 1st-level model. Then use the 1st-level model with Pseudo Labeling to label the test dataset as addtional training datasets, and run the 2en-level model on the kernel. Fanally ensamble the models get the final result.
 ### 1st-level models (run on local)
 To train 1st-level models, run:
 
