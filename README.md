@@ -3,6 +3,8 @@ This task is a kaggle competation-APTOS-2019-Blindness-Detection, the details is
 
 https://www.kaggle.com/c/aptos2019-blindness-detection/overview/description
 
+This is our team member:
+
 name | student id
 ------------ | ------------- |
 易新旭 | 0856152
